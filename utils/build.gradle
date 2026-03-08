@@ -1,0 +1,5 @@
+dependencies {
+    implementation libs.config.owner
+    implementation libs.bundles.testing.core
+    implementation libs.bundles.util
+}

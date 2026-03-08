@@ -1,0 +1,7 @@
+dependencies {
+    implementation libs.bundles.feign
+    implementation libs.jetbrains.annotations
+    implementation libs.bundles.testing.core
+    implementation libs.bundles.logging.log4j
+    implementation project(":utils")
+}

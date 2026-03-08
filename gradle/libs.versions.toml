@@ -1,0 +1,63 @@
+[versions]
+junit = "5.13.4"
+junitPlatformVersion= "1.13.4"
+log4j = "2.25.3"
+slf4j = "2.0.17"
+configOwner = "1.0.12"
+feign = "13.6"
+jetbrainsAnnotations = "26.0.2"
+wiremock = "3.13.2"
+
+[libraries]
+# Testing
+junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version.ref = "junitPlatformVersion" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+junit-params = { group="org.junit.jupiter", name = "junit-jupiter-params", version.ref= "junit" }
+config-owner = { group = "org.aeonbits.owner", name = "owner", version.ref = "configOwner" }
+wiremock = { group = "org.wiremock", name = "wiremock", version.ref = "wiremock" }
+
+# REST
+feign-core = { group = "io.github.openfeign", name = "feign-core", version.ref = "feign" }
+feign-jackson = { group = "io.github.openfeign", name = "feign-jackson", version.ref = "feign" }
+feign-form-encoder = { group = "io.github.openfeign", name = "feign-form", version.ref = "feign" }
+feign-java11 = { group = "io.github.openfeign", name = "feign-java11", version.ref = "feign" }
+feign-slf4j = { group = "io.github.openfeign", name = "feign-slf4j", version.ref = "feign" }
+
+# Logging
+slf4j-api = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j" }
+log4j-api = { group = "org.apache.logging.log4j", name = "log4j-api", version.ref = "log4j" }
+log4j-core = { group = "org.apache.logging.log4j", name = "log4j-core", version.ref = "log4j" }
+log4j-slf4j2-impl = { group = "org.apache.logging.log4j", name = "log4j-slf4j2-impl", version.ref = "log4j" }
+
+# Utils
+jetbrains-annotations = { group = "org.jetbrains", name = "annotations", version.ref = "jetbrainsAnnotations" }
+
+[bundles]
+testing-core = [
+    "junit-jupiter-api",
+    "junit-platform-launcher",
+    "junit-jupiter-engine",
+    "junit-params",
+    "wiremock"
+]
+
+logging-log4j = [
+    "slf4j-api",
+    "log4j-slf4j2-impl",
+    "log4j-core",
+    "log4j-api"
+]
+
+feign = [
+    "feign-core",
+    "feign-jackson",
+    "feign-form-encoder",
+    "feign-java11",
+    "config-owner",
+    "feign-slf4j"
+]
+
+util = [
+    "jetbrains-annotations",
+]
